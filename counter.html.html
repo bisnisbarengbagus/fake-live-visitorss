@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Live Visitors Counter</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #111;
+        color: #D7FC3A;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    .counter {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        padding: 8px 14px;
+        border-radius: 8px;
+    }
+    .counter span.icon {
+        font-size: 20px;
+        margin-right: 8px;
+    }
+    .count {
+        font-weight: bold;
+        margin-right: 5px;
+    }
+</style>
+</head>
+<body>
+    <div class="counter">
+        <span class="icon">👀</span>
+        <span class="count" id="visitor-count">0</span> orang sedang melihat halaman ini
+    </div>
+
+    <script>
+        function randomVisitors() {
+            let min = 60;
+            let max = 120;
+            let visitors = Math.floor(Math.random() * (max - min + 1)) + min;
+            document.getElementById("visitor-count").innerText = visitors;
+        }
+        randomVisitors();
+        setInterval(randomVisitors, Math.floor(Math.random() * (10000 - 5000 + 1)) + 5000);
+    </script>
+</body>
+</html>
